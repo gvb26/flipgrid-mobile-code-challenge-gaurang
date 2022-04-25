@@ -13,6 +13,7 @@ class SignUpViewController: UIViewController {
         let label = UILabel()
         label.text = "Profile Creation"
         label.textAlignment = .left
+        label.textColor = .darkGray
         label.font = UIFont(name: "Futura Bold", size: 30)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -54,7 +55,6 @@ class SignUpViewController: UIViewController {
     var signUpForm: SignUpModel? {
         didSet {
             DispatchQueue.main.async { [self] in
-                print(signUpForm?.signUpFields.count)
                 introLabel.text = signUpForm?.message
                 signUpFieldsTable.reloadData()
             }
@@ -127,12 +127,13 @@ class SignUpViewController: UIViewController {
             if isValidEntry(cell.signUpField.placeholder, cell.signUpField.text) {
                 fieldInformation.append(cell.signUpField.text ?? "")
             } else {
+                displayInvalidAlert(cell.signUpField.placeholder)
                 break
             }
         }
         let passCell = signUpFieldsTable.cellForRow(at: IndexPath(row: count - 1, section: 0)) as! SignUpFieldCell
-        if !isValidEntry("Password", passCell.signUpField.text ?? "") {
-            
+        if !isValidEntry(passCell.signUpField.placeholder, passCell.signUpField.text ?? "") {
+            displayInvalidAlert(passCell.signUpField.placeholder)
         }
         return fieldInformation
     }
@@ -140,14 +141,8 @@ class SignUpViewController: UIViewController {
     func isValidEntry(_ fieldType: String?, _ input: String?) -> Bool {
         switch fieldType {
             case "Password":
-                if !isValidPassword(input) {
-                    displayInvalidAlert(fieldType ?? "")
-                }
                 return isValidPassword(input)
             case "Email Address":
-                if !isValidEmail(input) {
-                    displayInvalidAlert(fieldType ?? "")
-                }
                 return isValidEmail(input)
             default:
                 return true
@@ -167,7 +162,7 @@ class SignUpViewController: UIViewController {
         return passwordTest.evaluate(with: value)
     }
     
-    func displayInvalidAlert(_ fieldType: String) {
+    func displayInvalidAlert(_ fieldType: String?) {
         var title = ""
         var message = ""
         switch fieldType {

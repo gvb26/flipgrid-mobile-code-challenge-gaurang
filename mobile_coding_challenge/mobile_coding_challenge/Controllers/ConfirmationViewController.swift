@@ -16,6 +16,7 @@ class ConfirmationViewController: UIViewController {
         let label = UILabel()
         label.textAlignment = .left
         label.font = UIFont(name: "Futura Bold", size: 30)
+        label.textColor = .darkGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -96,7 +97,6 @@ class ConfirmationViewController: UIViewController {
 extension ConfirmationViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(confirmationsFields)
         return confirmationsFields.count
     }
     
