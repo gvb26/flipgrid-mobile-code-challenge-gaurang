@@ -27,6 +27,8 @@ class CoreTextField: UITextField {
         layer.borderWidth = 0.5
         font = UIFont(name: "Futura Medium", size: 15)
         textColor = .darkGray
+        autocorrectionType = .no
+        autocapitalizationType = .none
     }
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {

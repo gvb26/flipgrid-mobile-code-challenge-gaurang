@@ -22,6 +22,7 @@
 		7A904709281624480057A80D /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A904708281624480057A80D /* SignUpModel.swift */; };
 		7A90470B281626170057A80D /* SignUpForm.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A90470A281626170057A80D /* SignUpForm.json */; };
 		7A904710281627220057A80D /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A90470F281627220057A80D /* DataHandler.swift */; };
+		7A9047122816F14F0057A80D /* SignUpFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9047112816F14F0057A80D /* SignUpFieldCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		7A904708281624480057A80D /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		7A90470A281626170057A80D /* SignUpForm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SignUpForm.json; sourceTree = "<group>"; };
 		7A90470F281627220057A80D /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		7A9047112816F14F0057A80D /* SignUpFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFieldCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			children = (
 				7A9046D228120D980057A80D /* SignUpViewController.swift */,
 				7A90470128120EBE0057A80D /* ConfirmationViewController.swift */,
+				7A9047112816F14F0057A80D /* SignUpFieldCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A9047122816F14F0057A80D /* SignUpFieldCell.swift in Sources */,
 				7A9046D328120D980057A80D /* SignUpViewController.swift in Sources */,
 				7A904709281624480057A80D /* SignUpModel.swift in Sources */,
 				7A9046CF28120D980057A80D /* AppDelegate.swift in Sources */,

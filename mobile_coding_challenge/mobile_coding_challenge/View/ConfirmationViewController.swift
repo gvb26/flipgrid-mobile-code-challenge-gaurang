@@ -96,7 +96,8 @@ class ConfirmationViewController: UIViewController {
 extension ConfirmationViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        confirmationsFields.count
+        print(confirmationsFields)
+        return confirmationsFields.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
