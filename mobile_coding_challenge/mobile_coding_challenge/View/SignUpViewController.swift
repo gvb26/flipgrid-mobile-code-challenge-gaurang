@@ -20,7 +20,6 @@ class SignUpViewController: UIViewController {
     
     lazy var introLabel: UILabel = {
         let label = UILabel()
-        label.text = "Use the form below to submit your portfolio.\nAs email and password are required"
         label.numberOfLines = 10
         label.font = UIFont(name: "Futura Medium", size: 15)
         label.textColor = .darkGray
@@ -29,25 +28,50 @@ class SignUpViewController: UIViewController {
         return label
     }()
     
+    lazy var nameTextField: CoreTextField = {
+        let textField = CoreTextField()
+        textField.placeholder = "First Name"
+        textField.autocorrectionType = .no
+        return textField
+    }()
+    
     lazy var signUpButton: CoreButton = {
         let button = CoreButton()
         button.setTitle("Submit", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Futura Medium", size: 20)
         button.addTarget(self, action: #selector(signUpButtonPressed), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    var signUpHandler = DataHandler()
+    
+    var signUpForm: SignUpModel? {
+        didSet {
+            DispatchQueue.main.async { [self] in
+                print(signUpForm)
+                introLabel.text = signUpForm?.message
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getFormData()
         setUpViews()
+    }
+    
+    func getFormData() {
+        signUpHandler.fetchSignUpFormData { (form) in
+            DispatchQueue.main.async { [self] in
+                self.signUpForm = form
+            }
+        }
     }
     
     func setUpViews() {
         view.addSubview(titleLabel)
         view.addSubview(introLabel)
         view.addSubview(signUpButton)
+        view.addSubview(nameTextField)
         setUpConstraints()
     }
     
@@ -65,6 +89,13 @@ class SignUpViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
+            nameTextField.topAnchor.constraint(equalTo: introLabel.bottomAnchor, constant: 20),
+            nameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            nameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
+            nameTextField.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        NSLayoutConstraint.activate([
             signUpButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -35),
             signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             signUpButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
@@ -74,9 +105,8 @@ class SignUpViewController: UIViewController {
     
     @objc func signUpButtonPressed() {
         let confirmationVC = ConfirmationViewController()
+        confirmationVC.confirmationsFields = [nameTextField.text ?? ""]
         self.present(confirmationVC, animated: true, completion: nil)
     }
-
-
 }
 

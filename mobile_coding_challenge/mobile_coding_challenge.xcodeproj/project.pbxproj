@@ -18,6 +18,10 @@
 		7A9046F228120D9A0057A80D /* mobile_coding_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9046F128120D9A0057A80D /* mobile_coding_challengeUITestsLaunchTests.swift */; };
 		7A90470228120EBE0057A80D /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A90470128120EBE0057A80D /* ConfirmationViewController.swift */; };
 		7A904705281215E90057A80D /* CoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A904704281215E90057A80D /* CoreButton.swift */; };
+		7A904707281620CA0057A80D /* CoreTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A904706281620CA0057A80D /* CoreTextField.swift */; };
+		7A904709281624480057A80D /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A904708281624480057A80D /* SignUpModel.swift */; };
+		7A90470B281626170057A80D /* SignUpForm.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A90470A281626170057A80D /* SignUpForm.json */; };
+		7A904710281627220057A80D /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A90470F281627220057A80D /* DataHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		7A9046F128120D9A0057A80D /* mobile_coding_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_coding_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7A90470128120EBE0057A80D /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		7A904704281215E90057A80D /* CoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreButton.swift; sourceTree = "<group>"; };
+		7A904706281620CA0057A80D /* CoreTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTextField.swift; sourceTree = "<group>"; };
+		7A904708281624480057A80D /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		7A90470A281626170057A80D /* SignUpForm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SignUpForm.json; sourceTree = "<group>"; };
+		7A90470F281627220057A80D /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,8 @@
 		7A9046CD28120D980057A80D /* mobile_coding_challenge */ = {
 			isa = PBXGroup;
 			children = (
+				7A90470E281627080057A80D /* Handlers */,
+				7A90470A281626170057A80D /* SignUpForm.json */,
 				7A904703281215240057A80D /* CustomUIObjects */,
 				7A90470028120E500057A80D /* ViewModel */,
 				7A9046FF28120E3D0057A80D /* View */,
@@ -137,6 +147,7 @@
 		7A9046FE28120E340057A80D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7A904708281624480057A80D /* SignUpModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,8 +172,17 @@
 			isa = PBXGroup;
 			children = (
 				7A904704281215E90057A80D /* CoreButton.swift */,
+				7A904706281620CA0057A80D /* CoreTextField.swift */,
 			);
 			path = CustomUIObjects;
+			sourceTree = "<group>";
+		};
+		7A90470E281627080057A80D /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				7A90470F281627220057A80D /* DataHandler.swift */,
+			);
+			path = Handlers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A9046DB28120D990057A80D /* LaunchScreen.storyboard in Resources */,
+				7A90470B281626170057A80D /* SignUpForm.json in Resources */,
 				7A9046D828120D990057A80D /* Assets.xcassets in Resources */,
 				7A9046D628120D980057A80D /* Main.storyboard in Resources */,
 			);
@@ -297,7 +318,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A9046D328120D980057A80D /* SignUpViewController.swift in Sources */,
+				7A904709281624480057A80D /* SignUpModel.swift in Sources */,
 				7A9046CF28120D980057A80D /* AppDelegate.swift in Sources */,
+				7A904707281620CA0057A80D /* CoreTextField.swift in Sources */,
+				7A904710281627220057A80D /* DataHandler.swift in Sources */,
 				7A90470228120EBE0057A80D /* ConfirmationViewController.swift in Sources */,
 				7A9046D128120D980057A80D /* SceneDelegate.swift in Sources */,
 				7A904705281215E90057A80D /* CoreButton.swift in Sources */,

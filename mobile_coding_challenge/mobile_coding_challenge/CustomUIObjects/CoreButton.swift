@@ -20,19 +20,17 @@ class CoreButton: UIButton {
         setUpButton()
     }
     
-    func setUpButton() {
+    private func setUpButton() {
         setTitleColor(.white, for: .normal)
         backgroundColor = .red
-        setShadow()
+        setStyle()
     }
     
-    private func setShadow() {
-        layer.cornerRadius = 20
-        clipsToBounds = true
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
-        layer.shadowRadius = 4
-        layer.shadowOpacity = 0.2
+    private func setStyle() {
+        layer.cornerRadius = 15
+        setTitleColor(.white, for: .normal)
+        titleLabel?.font = UIFont(name: "Futura Medium", size: 20)
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
 }

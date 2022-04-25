@@ -1,0 +1,9 @@
+{
+	"message" : "Use the form below to submit your portfolio.\nAs email and password are required",
+	"signUpFields" : [
+		"First Name",
+		"Email Address",
+		"Website",
+		"Password"
+	]
+}

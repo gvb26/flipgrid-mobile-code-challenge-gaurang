@@ -10,9 +10,10 @@ import UIKit
 
 class ConfirmationViewController: UIViewController {
     
+    var confirmationsFields = [String]()
+    
     lazy var welcomeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hello Audrey!"
         label.textAlignment = .left
         label.font = UIFont(name: "Futura Bold", size: 30)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -33,21 +34,32 @@ class ConfirmationViewController: UIViewController {
     lazy var signInButton: CoreButton = {
         let button = CoreButton()
         button.setTitle("Sign In", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Futura Medium", size: 20)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    lazy var userInfoTable: UITableView = {
+        let tableView = UITableView()
+        tableView.separatorColor = .clear
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.isScrollEnabled = false
+        tableView.isUserInteractionEnabled = false
+        return tableView
+    }()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setUpViews()
+        userInfoTable.delegate = self
+        userInfoTable.dataSource = self
+        welcomeLabel.text = "Hello \(confirmationsFields[0])!"
     }
     
     func setUpViews() {
         view.addSubview(welcomeLabel)
         view.addSubview(introLabel)
+        view.addSubview(userInfoTable)
         view.addSubview(signInButton)
         setUpConstraints()
     }
@@ -66,10 +78,35 @@ class ConfirmationViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
+            userInfoTable.topAnchor.constraint(equalTo: introLabel.bottomAnchor, constant: 20),
+            userInfoTable.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            userInfoTable.widthAnchor.constraint(equalTo: view.widthAnchor),
+            userInfoTable.heightAnchor.constraint(equalToConstant: CGFloat(confirmationsFields.count * 50))
+        ])
+        
+        NSLayoutConstraint.activate([
             signInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -35),
             signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             signInButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
             signInButton.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
+}
+
+extension ConfirmationViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        confirmationsFields.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = confirmationsFields[indexPath.row]
+        cell.textLabel?.font = UIFont(name: "Futura Medium", size: 15)
+        cell.textLabel?.textAlignment = .center
+        cell.textLabel?.textColor = .darkGray
+        return cell
+    }
+    
+    
 }
