@@ -3,8 +3,11 @@
 
 This is my attempt at an onboarding screen according to the requirements provided to me with a few additions. This project consists of two main pages:
 
-- Sign Up Page -> This page takes in sign up data and allows you to submit. The email and password fields are required to proceed
-- Confirmation Page -> This page displays the confirmation that your onboarding was successful, addresses you by name and lists your provided onboarded information
+![ezgif-5-611f321feb](https://user-images.githubusercontent.com/25397326/165193946-14ddb1c9-6918-4c7d-b124-3de27278d3cf.gif)
+
+
+- **Sign Up Page** -> This page takes in sign up data and allows you to submit. The email and password fields are required to proceed
+- **Confirmation Page** -> This page displays the confirmation that your onboarding was successful, addresses you by name and lists your provided onboarded information
 
 I took a few liberties to enhance the project:
 
