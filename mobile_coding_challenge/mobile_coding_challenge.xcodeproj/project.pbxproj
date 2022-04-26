@@ -113,13 +113,12 @@
 		7A9046CD28120D980057A80D /* mobile_coding_challenge */ = {
 			isa = PBXGroup;
 			children = (
-				7A90471328175FF20057A80D /* Controllers */,
 				7A90470E281627080057A80D /* Handlers */,
 				7A90470A281626170057A80D /* SignUpForm.json */,
 				7A904703281215240057A80D /* CustomUIObjects */,
-				7A90470028120E500057A80D /* ViewModel */,
-				7A9046FF28120E3D0057A80D /* View */,
 				7A9046FE28120E340057A80D /* Model */,
+				7A9046FF28120E3D0057A80D /* View */,
+				7A90471328175FF20057A80D /* Controllers */,
 				7A9046CE28120D980057A80D /* AppDelegate.swift */,
 				7A9046D028120D980057A80D /* SceneDelegate.swift */,
 				7A9046D428120D980057A80D /* Main.storyboard */,
@@ -161,13 +160,6 @@
 				7A9047112816F14F0057A80D /* SignUpFieldCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		7A90470028120E500057A80D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		7A904703281215240057A80D /* CustomUIObjects */ = {

@@ -9,6 +9,8 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
+    var signUpHandler: DataHandler = DataHandler()
+    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Profile Creation"
@@ -50,8 +52,6 @@ class SignUpViewController: UIViewController {
         return tableView
     }()
     
-    var signUpHandler = DataHandler()
-    
     var signUpForm: SignUpModel? {
         didSet {
             DispatchQueue.main.async { [self] in
@@ -69,6 +69,7 @@ class SignUpViewController: UIViewController {
         setUpViews()
     }
     
+    // Fetches form data from JSON (Can be configured to be an API Call)
     func getFormData() {
         signUpHandler.fetchSignUpFormData { (form) in
             DispatchQueue.main.async { [self] in
@@ -119,6 +120,7 @@ class SignUpViewController: UIViewController {
         self.present(confirmationVC, animated: true, completion: nil)
     }
     
+    // Aggregates the sign up information to be submitted
     func gatherSignUpInformation() -> [String] {
         guard let count = signUpForm?.signUpFields.count else { return [] }
         var fieldInformation = [String]()
@@ -157,6 +159,7 @@ class SignUpViewController: UIViewController {
     
     func isValidPassword(_ value: String?) -> Bool {
         guard value != nil else { return false }
+        
         // at least one uppercase, lower case, digit and at least 8 characters
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?=.*[$@$#!%*?&_~']).{8,}")
         return passwordTest.evaluate(with: value)
