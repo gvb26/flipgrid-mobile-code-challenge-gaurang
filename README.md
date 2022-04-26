@@ -3,7 +3,8 @@
 
 This is my attempt at an onboarding screen according to the requirements provided to me with a few additions. This project consists of two main pages:
 
-![ezgif-5-611f321feb](https://user-images.githubusercontent.com/25397326/165193946-14ddb1c9-6918-4c7d-b124-3de27278d3cf.gif)
+
+![ezgif-5-83dfdc1119](https://user-images.githubusercontent.com/25397326/165194322-eb2bc0f8-c209-40f8-b796-db879aeef332.gif)
 
 
 - **Sign Up Page** -> This page takes in sign up data and allows you to submit. The email and password fields are required to proceed
