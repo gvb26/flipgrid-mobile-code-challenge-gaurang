@@ -21,23 +21,6 @@ public class DataHandler {
             let error = error
             print(error.localizedDescription)
         }
-        
     }
-    
-    func fetchConfirmationData(completionHandler: @escaping (SignUpModel) -> Void) {
-        
-        guard let file = Bundle.main.url(forResource: "Confirmation", withExtension: "json") else { return }
-        
-        do {
-            let data = try Data(contentsOf: file)
-            let signUpFormData = try JSONDecoder().decode(SignUpModel.self, from: data)
-            completionHandler(signUpFormData)
-        } catch {
-            let error = error
-            print(error.localizedDescription)
-        }
-        
-    }
-    
     
 }

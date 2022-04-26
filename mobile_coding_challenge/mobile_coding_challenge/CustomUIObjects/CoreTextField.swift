@@ -17,7 +17,6 @@ class CoreTextField: UITextField {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setUpTextField()
     }
     
     private func setUpTextField() {

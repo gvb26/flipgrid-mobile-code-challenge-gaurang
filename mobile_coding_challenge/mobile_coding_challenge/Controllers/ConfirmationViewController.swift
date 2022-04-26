@@ -109,5 +109,4 @@ extension ConfirmationViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-    
 }

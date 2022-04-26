@@ -10,27 +10,41 @@ import XCTest
 
 class mobile_coding_challengeTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    var signUpVC = SignUpViewController()
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testInvalidEmail() {
+        let email = "gaurangbhamgmail"
+        XCTAssertFalse(signUpVC.isValidEmail(email))
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testValidEmail() {
+        let email = "gaurangbham@gmail.com"
+        XCTAssertTrue(signUpVC.isValidEmail(email))
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testInvalidPassword() {
+        let pass = "testpass"
+        XCTAssertFalse(signUpVC.isValidPassword(pass))
+    }
+    
+    func testValidPassword() {
+        let pass = "Test101!"
+        XCTAssertTrue(signUpVC.isValidPassword(pass))
+    }
+    
+    func testInvalidEntryEmail() {
+        let email = "gaurangbhamgmail"
+        XCTAssertFalse(signUpVC.isValidEntry("Email Address", email))
+    }
+    
+    func testInvalidEntryPassword() {
+        let pass = "testpass"
+        XCTAssertFalse(signUpVC.isValidEntry("Password", pass))
+    }
+    
+    func testIsValidEntry() {
+        let text = "test.com"
+        XCTAssertTrue(signUpVC.isValidEntry("website", text))
     }
 
 }
