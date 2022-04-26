@@ -13,6 +13,13 @@ This is my attempt at an onboarding screen according to the requirements provide
 
 ![Simulator Screen Shot - iPhone 13 - 2022-04-26 at 18 29 23 (1)](https://user-images.githubusercontent.com/25397326/165403811-b65e7877-faf1-4e61-919d-88a9de1e29f9.png)
 
+I have added validation logic to prevent the user from putting in an invalid email format or a password that doesn't meeting proper specification (8 characters, 1 uppercase, 1 lowercase, 1 number and special character)
+
+![Simulator Screen Shot - iPhone 13 - 2022-04-26 at 19 16 45 (1)](https://user-images.githubusercontent.com/25397326/165408356-3ac655e0-dbf5-4e38-b80d-13f3ebba9fce.png)
+![Simulator Screen Shot - iPhone 13 - 2022-04-26 at 19 17 09 (1)](https://user-images.githubusercontent.com/25397326/165408374-5b800a26-3043-4871-95f8-66b401392cf7.png)
+
+
+
 - **Confirmation Page** -> This page displays the confirmation that your onboarding was successful, addresses you by name and lists your provided onboarded information
 
 ![Simulator Screen Shot - iPhone 13 - 2022-04-26 at 18 29 50 (1)](https://user-images.githubusercontent.com/25397326/165403546-c10c90d5-835c-42e8-8c7b-06ad2bbe1c43.png)
